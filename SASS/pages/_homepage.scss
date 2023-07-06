@@ -1,0 +1,95 @@
+h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+};
+
+.intro {
+    @include flex-column;
+};
+
+.fa-location-dot {
+    color: black;
+}
+
+.location {
+    @include flex-row;
+    justify-content: center;
+    padding: 1em;
+    gap: 1em;
+    background-color: $location-bg-color;
+    >p {
+        font-weight: 500;
+    }
+};
+
+.booking {
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5em 1.875em 3.5em;
+    gap: 1.55em;
+    background-color: $main-bg-color;
+    >h2 {
+        padding: 0 1em 0 1em;
+    }
+    >p {
+        font-size: 18px;
+    }
+};
+
+.functionning {
+    padding: 3.125em 1.25em 4.375em;
+    .container {
+        @include flex-column;
+        gap: 1.625em;
+        @include desktop {
+            @include flex-row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.25em;
+        }
+        h2 {
+            @include desktop {
+                width: 100%;
+            }
+        }
+    }
+};
+
+.fa-mobile-screen-button {
+    color: $grey-color;
+}
+
+.fa-bars {
+    @extend .fa-mobile-screen-button;
+}
+
+.fa-store {
+    color: $primary_color;
+}
+
+.restaurants {
+    padding: 3.5em 1.1em 4.125em;
+    background-color: $main-bg-color;
+    h2 {
+        margin-bottom: 1em;
+    }
+    &__card-panel {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 2em;
+    }
+    @include desktop {
+        .restaurants__card-panel {
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 2em;
+        }
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: auto;
+}
+

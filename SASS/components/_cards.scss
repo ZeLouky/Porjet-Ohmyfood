@@ -1,0 +1,143 @@
+.functionning__card {
+    @include flex-row;
+    @include element-shadow;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    margin-left: 0.8em;
+    padding: 1.625em ;
+    line-height: 1.25em;
+    font-weight: 500;
+    border-radius: 20px;
+    background-color: $main-bg-color;
+    p:first-child {
+        position: absolute;
+        font-size: 14px;
+        left: -0.8em;
+        color: $white-color;
+        padding: 0.1625em 0.6em;
+        border-radius: 100%;
+        background: $primary_color;
+    }
+    .card__logo {
+        &::before {
+            @include flex-row;
+            font-size: 1.25em;
+            margin-left: 0.65em;
+            margin-right: 0.8em;
+            width: 1.5em;
+        }
+    }
+}
+
+.restaurants__card {
+    @include flex-column;
+    color: black;
+    border-radius: 15px;
+    position: relative;
+    @include element-shadow;
+    img {
+        @include img-cover;
+        object-position: 50% 60%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height: 175px;
+        width: 100%;
+    }
+    .card__content {
+        @include flex-column;
+        position: relative;
+        padding: 0.7em 0.75em 1em;
+        gap: 0.2em;
+        width: 100%;
+        h3 {
+            font-size: 1.125em;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.06em;
+            font-weight: 300;
+        }
+        i {
+            position: absolute;
+            top: 1.1em;
+            right: 1em;
+        }
+    }
+}
+
+.nouveau__card {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    color: $quaternary_color;
+    font-size: 0.8em;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    background-color: $tertiary_color;
+    @include element-shadow;
+}
+
+.menu__card {
+    @include flex-row;
+    margin: 1em 0 1em 0;
+    padding: 1em;
+    background-color: $white-color;
+    border-radius: 1em;
+    @include element-shadow;
+    overflow: hidden;
+    &--text {
+        @include flex-column;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+    }
+    h3 {
+        font-size: 1em;
+        font-weight: 700;
+        @include text-overflow;
+    }
+    p {
+        font-size: 0.9em;
+        @include text-overflow;
+    }
+    &> p {
+        @include flex-row;
+        font-size: 1em;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-weight: 700;
+        padding-left: 0.5em;
+        margin-right: 1em;
+    }
+    &--click {
+        @include flex-row;
+        justify-content: center;
+        align-items: center;
+        background-color: $tertiary_color;
+        width: 4em;
+        margin: -1em -5em -1em 0em;
+        transition-property: margin;
+        transition-duration: 1.25s;
+        i {
+            @include flex-row;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            width: 1.6em;
+            height: 1.6em;
+            border-radius: 100px;
+            background: $white-color;
+            color: $tertiary_color;
+        }
+    }
+    &:hover {
+        .menu__card--click {
+            margin: -1em -1em -1em 0em;
+        }
+    }
+    @include desktop {
+        width: 635px;
+    }
+}
